@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #111;
+}
+
+header p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.error-messages p {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.shorten-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.shorten-form input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1em;
+}
+
+.shorten-form input:focus {
+    border-color: #3b82f6;
+}
+
+.shorten-form button {
+    padding: 14px 24px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+
+.shorten-form button:hover {
+    background-color: #2563eb;
+}
+
+.result-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.result-card h3 {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.short-link {
+    display: inline-block;
+    font-size: 1.4em;
+    color: #10b981;
+    font-weight: bold;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.short-link:hover {
+    text-decoration: underline;
+}
+
+.hint {
+    margin-top: 15px;
+    font-size: 0.85em;
+    color: #94a3b8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .shorten-form {
+        flex-direction: column;
+    }
+
+    .shorten-form button {
+        width: 100%;
+    }
+}
