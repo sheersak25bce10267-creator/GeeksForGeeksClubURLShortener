@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>URL Shortener</h1>
+            <p>Paste a long URL below to generate a compact, easy-to-share link.</p>
+        </header>
+
+        <!-- Display any backend validation errors -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="error-messages">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <form action="/" method="POST" class="shorten-form">
+            <!-- type="url" forces frontend browser validation -->
+            <input type="url" name="long_url" placeholder="https://example.com/very-long-link" required>
+            <button type="submit">Shorten</button>
+        </form>
+
+        <!-- Only display this section if a short URL was generated -->
+        {% if short_url %}
+        <div class="result-card">
+            <h3>Your Shortened URL:</h3>
+            <a href="{{ short_url }}" target="_blank" class="short-link">{{ short_url }}</a>
+            <p class="hint">Click the link to test the redirect.</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
