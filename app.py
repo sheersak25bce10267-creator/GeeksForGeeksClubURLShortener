@@ -9,8 +9,7 @@ app.secret_key = "super_secret_key"
 def init_db():
     conn = sqlite3.connect('urls.db')
     c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS url_map 
-                 (short_code TEXT PRIMARY KEY, original_url TEXT)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS url_map (short_code TEXT PRIMARY KEY, original_url TEXT)''')
     conn.commit()
     conn.close()
 
